@@ -23,9 +23,12 @@ def answer(banana_list):
 				guards[x].infinite.append(banana_list[y])
 
 	guards.sort(key=lambda x: len(x.infinite))
-	for x in xrange(length):
-		print guards[x].bananaCount, guards[x].infinite
+	#for x in xrange(length):
+		#print guards[x].bananaCount, guards[x].infinite
 
+	for x in xrange(0, length):
+		for y in xrange(length-1, 1, -1):
+			if guards[x].bananaCount in guards[y].infinite:
+				print guards[x].bananaCount, guards[y].bananaCount	
 
 answer([1,7,3,21,13,19])
-
